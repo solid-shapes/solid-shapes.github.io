@@ -95,6 +95,12 @@ Logged as `notes` in the shape's `x-urn-solid.notes` array, with no constraint e
 
 For these, hand-augmentation is the path — write a separate `<Name>-extra.shacl.ttl` (or extend the JSON-LD) with the graph-level rules.
 
+## Cross-vocabulary shape surveys
+
+The auto-derived SHACL shapes describe *one* canonical model per type. But for many domains (tasks, contacts, calendars) the Solid ecosystem has multiple incompatible conventions in the wild. [`docs/shapes/`](docs/shapes/) is a growing series of surveys comparing them with sample data, predicate-alignment tables, and tradeoffs — so app builders can choose deliberately rather than reverse-engineer.
+
+- [Tasks & to-do lists](docs/shapes/tasks.md) — `wf:Tracker` vs Solid Focus vs pure ical.
+
 ## Build
 
 ```bash
