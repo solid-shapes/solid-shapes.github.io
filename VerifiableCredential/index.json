@@ -1,0 +1,94 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/VerifiableCredential/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:VerifiableCredential"
+  },
+  "rdfs:label": "VerifiableCredential",
+  "rdfs:comment": "A W3C Verifiable Credential — a tamper-evident, cryptographically-signed claim made by an issuer about a subject.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:issuer"
+      },
+      "sh:minCount": 1,
+      "sh:description": "The party that issued the credential. Either an IRI or an Object with @id and optional metadata."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:issuanceDate"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the credential was issued (ISO 8601). VC 1.x."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:validFrom"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the credential becomes valid (ISO 8601). VC 2.0 alternative to issuanceDate."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:expirationDate"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the credential expires (ISO 8601). VC 1.x."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:validUntil"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the credential ceases to be valid (ISO 8601). VC 2.0 alternative to expirationDate."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:credentialSubject"
+      },
+      "sh:minCount": 1,
+      "sh:description": "The entity the credential makes claims about. Object (one subject) or array (many subjects). Each carries @id and arbitrary claim properties."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:credentialStatus"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:BlankNodeOrIRI"
+      },
+      "sh:description": "Reference to a status mechanism (revocation list, status list)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:proof"
+      },
+      "sh:description": "Cryptographic proof — issuer signature. Object (one proof) or array (multiple proofs)."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:VerifiableCredential",
+    "termRegistry": "https://urn-solid.github.io/VerifiableCredential/",
+    "schemaSource": "https://solid-schema.github.io/VerifiableCredential/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": [
+      "property \"issuer\": anyOf not translated",
+      "property \"credentialSubject\": oneOf not translated",
+      "property \"proof\": oneOf not translated"
+    ]
+  }
+}

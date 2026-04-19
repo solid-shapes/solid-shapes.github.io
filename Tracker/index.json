@@ -1,0 +1,77 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Tracker/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Tracker"
+  },
+  "rdfs:label": "Tracker",
+  "rdfs:comment": "A container for tracking work items — typically a list of iCalendar Vtodos. The list-level counterpart to single-task Vtodo.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:title"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "The Tracker's display name (e.g. \"Today\", \"Backlog\")."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:created"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the Tracker was created (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:modified"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the Tracker was most recently updated (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:initialState"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:in": {
+        "@list": [
+          "NEEDS-ACTION",
+          "IN-PROCESS",
+          "COMPLETED",
+          "CANCELLED"
+        ]
+      },
+      "sh:description": "iCalendar status assigned to newly-created Vtodos in this Tracker (default: NEEDS-ACTION)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:issue"
+      },
+      "sh:description": "The Vtodos this Tracker contains. Each entry is a Vtodo (inline) or a reference (string/object @id)."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Tracker",
+    "termRegistry": "https://urn-solid.github.io/Tracker/",
+    "schemaSource": "https://solid-schema.github.io/Tracker/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": []
+  }
+}

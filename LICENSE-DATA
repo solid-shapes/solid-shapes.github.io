@@ -1,0 +1,38 @@
+DATA LICENSE — CC BY 4.0 (Creative Commons Attribution 4.0 International)
+==========================================================================
+
+The shape files in this repository are licensed under the Creative
+Commons Attribution 4.0 International License (CC BY 4.0). You are free
+to share and adapt the material for any purpose, including commercially,
+provided you give appropriate credit and indicate any changes.
+
+Suggested attribution: "solid-shapes, https://solid-shapes.github.io/,
+licensed under CC BY 4.0."
+
+Full legal text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+What this covers
+----------------
+
+CC BY 4.0 applies to the SHACL shape data:
+
+  - <Name>/index.json    — each type's SHACL NodeShape (JSON-LD)
+  - corpus.jsonl         — generated: every shape as one record per line
+  - index.json           — generated: name → shape URL
+  - reverse-index.json   — generated: urn:solid type → shape URL
+
+What this does NOT cover
+------------------------
+
+Build scripts remain licensed under AGPL-3.0 (see LICENSE):
+
+  - scripts/*.js
+  - top-level index.html
+
+Why
+---
+
+SHACL shapes are graph contracts — designed to be embedded in any
+validator (SHACL or otherwise) that checks RDF data. CC BY 4.0 means a
+shape for urn:solid:Person can be dropped into a proprietary system
+with attribution but without inheriting copyleft.

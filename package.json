@@ -1,0 +1,16 @@
+{
+  "name": "@solid-shapes/registry",
+  "version": "0.0.1",
+  "description": "SHACL NodeShapes (in JSON-LD) for urn:solid types — auto-derived from solid-schema's JSON Schemas, ready for any SHACL validator.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "validate": "node scripts/validate.js"
+  },
+  "license": "AGPL-3.0",
+  "homepage": "https://solid-shapes.github.io",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solid-shapes/solid-shapes.github.io.git"
+  }
+}

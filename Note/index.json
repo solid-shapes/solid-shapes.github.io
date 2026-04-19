@@ -1,0 +1,87 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Note/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Note"
+  },
+  "rdfs:label": "Note",
+  "rdfs:comment": "A short text post — the fediverse-canonical Note.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:content"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:description": "The note text. May contain HTML in fediverse usage."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:summary"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:description": "Optional short summary or content warning."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:published"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "ISO-8601 datetime the note was published."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:updated"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "ISO-8601 datetime of the most recent edit."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:attributedTo"
+      },
+      "sh:description": "The author — Person or Actor reference."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:inReplyTo"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "Optional reference to the Note this is a reply to."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:to"
+      },
+      "sh:description": "Audience the note is addressed to (often urn:solid:Public for public posts)."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Note",
+    "termRegistry": "https://urn-solid.github.io/Note/",
+    "schemaSource": "https://solid-schema.github.io/Note/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": [
+      "property \"attributedTo\": anyOf not translated",
+      "property \"to\": oneOf not translated"
+    ]
+  }
+}

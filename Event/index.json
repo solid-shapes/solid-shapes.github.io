@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Event/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Event"
+  },
+  "rdfs:label": "Event",
+  "rdfs:comment": "A scheduled occurrence with a start (and usually end) time. Aligns with as:Event, schema:Event, and ical:Vevent at the term level.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:name"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "The Event's title."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:summary"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:description": "A short summary or description of the Event."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:startTime"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the Event begins (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:endTime"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the Event ends (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:location"
+      },
+      "sh:description": "Where the Event takes place — a Place reference (URI) or a free-text string."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:attributedTo"
+      },
+      "sh:description": "The Person or Actor responsible for the Event."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:url"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "A canonical web URL for the Event (often distinct from @id for fediverse content)."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Event",
+    "termRegistry": "https://urn-solid.github.io/Event/",
+    "schemaSource": "https://solid-schema.github.io/Event/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": [
+      "property \"location\": anyOf not translated",
+      "property \"attributedTo\": anyOf not translated"
+    ]
+  }
+}

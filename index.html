@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>solid-shapes</title>
+<style>
+body { font-family: Georgia, serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #2c2c2c; background: #fafaf8; }
+header a { color: #888; text-decoration: none; margin-right: 1.2rem; }
+h1 { margin-bottom: 0.25rem; }
+.subtitle { color: #888; margin-top: 0; }
+ul { list-style: none; padding: 0; }
+li { background: #fff; border: 1px solid #e5e3de; border-radius: 6px; padding: 12px 16px; margin: 0.5rem 0; }
+li a { color: #1a5276; text-decoration: none; font-weight: 600; }
+li small { color: #888; display: block; margin-top: 4px; font-family: monospace; }
+.urn { font-family: monospace; background: #f0efeb; padding: 0.1em 0.4em; border-radius: 3px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/">solid-shapes</a>
+  <a href="/index.json">index</a>
+  <a href="/reverse-index.json">reverse</a>
+  <a href="/corpus.jsonl">corpus</a>
+  <a href="https://solid-schema.github.io/">solid-schema (source)</a>
+</header>
+
+<h1>solid-shapes</h1>
+<p class="subtitle">SHACL NodeShapes (in JSON-LD) for <span class="urn">urn:solid:</span> types — auto-derived from <a href="https://solid-schema.github.io/">solid-schema</a>'s JSON Schemas. Drop into any SHACL validator alongside your RDF data, or read as JSON if that's all you need.</p>
+
+<h2>Shapes</h2>
+<ul id="all-shapes"><li><em>Loading…</em></li></ul>
+
+<h2>Stack position</h2>
+<pre style="background: #f0efeb; padding: 1rem; overflow-x: auto;">LION  →  urn-solid  →  solid-schema  →  solid-shapes (this)  →  solid-panes  →  LOSOS
+                       (JSON layer)     (RDF graph layer)</pre>
+
+<footer style="margin-top: 3rem; color: #888; font-size: 0.85em;">
+  <p><a href="https://github.com/solid-shapes/solid-shapes.github.io">github.com/solid-shapes/solid-shapes.github.io</a></p>
+</footer>
+
+<script>
+(async () => {
+  const list = document.getElementById('all-shapes')
+  try {
+    const res = await fetch('/index.json')
+    const idx = await res.json()
+    const entries = Object.entries(idx).sort(([a], [b]) => a.localeCompare(b))
+    list.innerHTML = ''
+    if (!entries.length) { list.innerHTML = '<li><em>No shapes yet.</em></li>'; return }
+    for (const [name, info] of entries) {
+      const li = document.createElement('li')
+      const a = document.createElement('a')
+      a.href = info.shape
+      a.textContent = info.label || name
+      li.append(a)
+      const small = document.createElement('small')
+      small.textContent = info.term
+      li.append(' — ', info.description, small)
+      list.append(li)
+    }
+  } catch (e) {
+    list.innerHTML = '<li><em>Failed to load index.</em></li>'
+  }
+})()
+</script>
+</body>
+</html>

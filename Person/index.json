@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Person/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Person"
+  },
+  "rdfs:label": "Person",
+  "rdfs:comment": "A human person — schema for data typed as urn:solid:Person.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:name"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "The Person's full display name."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:nick"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:maxLength": 50,
+      "sh:description": "A short nickname or handle."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:email"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+      "sh:flags": "i",
+      "sh:description": "An email address."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:homepage"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "URL of the Person's primary website."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:img"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "URL of an image of the Person."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:knows"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "Other People this Person knows. Each entry is a WebID URI."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Person",
+    "termRegistry": "https://urn-solid.github.io/Person/",
+    "schemaSource": "https://solid-schema.github.io/Person/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": []
+  }
+}

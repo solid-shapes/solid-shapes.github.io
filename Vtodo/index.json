@@ -1,0 +1,117 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Vtodo/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Vtodo"
+  },
+  "rdfs:label": "Vtodo",
+  "rdfs:comment": "An iCalendar to-do item — a task with status, priority, and optional due dates. RFC 5545 compatible.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:summary"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "The task title — what to do."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:description"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:description": "Longer-form description or notes."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:dtstart"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the task becomes actionable (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:due"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "Due date-time — the deadline (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:duration"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:pattern": "^-?P(?:[0-9]+Y)?(?:[0-9]+M)?(?:[0-9]+D)?(?:T(?:[0-9]+H)?(?:[0-9]+M)?(?:[0-9]+(?:\\.[0-9]+)?S)?)?$",
+      "sh:description": "How long the task is expected to take (xsd:duration, e.g. PT30M)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:status"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:in": {
+        "@list": [
+          "NEEDS-ACTION",
+          "IN-PROCESS",
+          "COMPLETED",
+          "CANCELLED"
+        ]
+      },
+      "sh:description": "iCalendar Vtodo status enum (RFC 5545)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:priority"
+      },
+      "sh:datatype": {
+        "@id": "xsd:integer"
+      },
+      "sh:minInclusive": 0,
+      "sh:maxInclusive": 9,
+      "sh:description": "Priority 0 (undefined) through 9 (lowest); 1 is highest. RFC 5545 §3.8.1.9."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:completed"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the task was marked complete (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:categories"
+      },
+      "sh:description": "Tags / categories for the task."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Vtodo",
+    "termRegistry": "https://urn-solid.github.io/Vtodo/",
+    "schemaSource": "https://solid-schema.github.io/Vtodo/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": []
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Article/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Article"
+  },
+  "rdfs:label": "Article",
+  "rdfs:comment": "A long-form authored piece — a blog post, news article, or essay. More structured than Note.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:name"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:description": "The Article's title — required for an Article (unlike a Note)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:content"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:description": "The Article body. Often HTML in fediverse usage."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:summary"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:description": "Short summary or lede."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:mediaType"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:description": "MIME type of the content (defaults to text/html in fediverse usage)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:attributedTo"
+      }
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:published"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:updated"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      }
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:url"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      }
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:tag"
+      },
+      "sh:description": "Tags, hashtags, or mentions attached to the Article."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Article",
+    "termRegistry": "https://urn-solid.github.io/Article/",
+    "schemaSource": "https://solid-schema.github.io/Article/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": [
+      "property \"attributedTo\": anyOf not translated"
+    ]
+  }
+}
