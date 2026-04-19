@@ -7,6 +7,14 @@
     "status": "stable",
     "schemaSource": "https://solid-schema.github.io/Article/index.json"
   },
+  "Bookmark": {
+    "term": "urn:solid:Bookmark",
+    "label": "Bookmark",
+    "description": "A saved reference to a web resource — title, URL, optional tags and notes.",
+    "shape": "/Bookmark/index.json",
+    "status": "stable",
+    "schemaSource": "https://solid-schema.github.io/Bookmark/index.json"
+  },
   "Document": {
     "term": "urn:solid:Document",
     "label": "Document",

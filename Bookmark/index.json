@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Bookmark/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Bookmark"
+  },
+  "rdfs:label": "Bookmark",
+  "rdfs:comment": "A saved reference to a web resource — title, URL, optional tags and notes.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:title"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "The bookmark headline."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:recalls"
+      },
+      "sh:minCount": 1,
+      "sh:nodeKind": {
+        "@id": "sh:IRI"
+      },
+      "sh:description": "The URL the bookmark points at."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:description"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:maxLength": 2000,
+      "sh:description": "Free-text notes about the bookmark."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:hasTopic"
+      },
+      "sh:description": "Tags or topics for free-form classification."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:created"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "ISO-8601 datetime the bookmark was saved."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:attributedTo"
+      },
+      "sh:description": "Who saved the bookmark."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Bookmark",
+    "termRegistry": "https://urn-solid.github.io/Bookmark/",
+    "schemaSource": "https://solid-schema.github.io/Bookmark/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": [
+      "property \"hasTopic\": oneOf not translated",
+      "property \"attributedTo\": anyOf not translated"
+    ]
+  }
+}
