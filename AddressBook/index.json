@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/AddressBook/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:AddressBook"
+  },
+  "rdfs:label": "AddressBook",
+  "rdfs:comment": "A collection of contacts — a personal or shared address book.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:title"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:minLength": 1,
+      "sh:maxLength": 200,
+      "sh:description": "Display name of the address book."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:description"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:maxLength": 2000,
+      "sh:description": "Free-text notes about this address book."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:hasMember"
+      },
+      "sh:description": "The contacts in this address book — typically Person references."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:created"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "ISO-8601 datetime the address book was created."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:AddressBook",
+    "termRegistry": "https://urn-solid.github.io/AddressBook/",
+    "schemaSource": "https://solid-schema.github.io/AddressBook/index.json",
+    "status": "stable",
+    "added": "2026-04-19",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": []
+  }
+}

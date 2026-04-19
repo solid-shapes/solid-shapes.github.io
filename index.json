@@ -1,4 +1,12 @@
 {
+  "AddressBook": {
+    "term": "urn:solid:AddressBook",
+    "label": "AddressBook",
+    "description": "A collection of contacts — a personal or shared address book.",
+    "shape": "/AddressBook/index.json",
+    "status": "stable",
+    "schemaSource": "https://solid-schema.github.io/AddressBook/index.json"
+  },
   "Article": {
     "term": "urn:solid:Article",
     "label": "Article",
