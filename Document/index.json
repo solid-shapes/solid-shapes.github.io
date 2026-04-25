@@ -84,7 +84,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Document",
-    "termRegistry": "https://urn-solid.github.io/Document/",
+    "termRegistry": "https://urn-solid.com/Document/",
     "schemaSource": "https://solid-schema.github.io/Document/index.json",
     "status": "stable",
     "added": "2026-04-19",

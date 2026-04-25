@@ -74,7 +74,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Note",
-    "termRegistry": "https://urn-solid.github.io/Note/",
+    "termRegistry": "https://urn-solid.com/Note/",
     "schemaSource": "https://solid-schema.github.io/Note/index.json",
     "status": "stable",
     "added": "2026-04-19",

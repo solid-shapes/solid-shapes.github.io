@@ -80,7 +80,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:VerifiableCredential",
-    "termRegistry": "https://urn-solid.github.io/VerifiableCredential/",
+    "termRegistry": "https://urn-solid.com/VerifiableCredential/",
     "schemaSource": "https://solid-schema.github.io/VerifiableCredential/index.json",
     "status": "stable",
     "added": "2026-04-19",

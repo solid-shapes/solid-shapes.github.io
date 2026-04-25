@@ -67,7 +67,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Tracker",
-    "termRegistry": "https://urn-solid.github.io/Tracker/",
+    "termRegistry": "https://urn-solid.com/Tracker/",
     "schemaSource": "https://solid-schema.github.io/Tracker/index.json",
     "status": "stable",
     "added": "2026-04-19",
