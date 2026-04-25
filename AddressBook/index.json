@@ -52,7 +52,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:AddressBook",
-    "termRegistry": "https://urn-solid.github.io/AddressBook/",
+    "termRegistry": "https://urn-solid.com/AddressBook/",
     "schemaSource": "https://solid-schema.github.io/AddressBook/index.json",
     "status": "stable",
     "added": "2026-04-19",
