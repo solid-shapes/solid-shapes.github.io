@@ -1,6 +1,6 @@
 # solid-shapes
 
-SHACL [NodeShapes](https://www.w3.org/TR/shacl/#node-shapes) for [urn:solid](https://urn-solid.github.io/) types — auto-derived from [solid-schema](https://solid-schema.github.io/)'s JSON Schemas.
+SHACL [NodeShapes](https://www.w3.org/TR/shacl/#node-shapes) for [urn:solid](https://urn-solid.com/) types — auto-derived from [solid-schema](https://solid-schema.github.io/)'s JSON Schemas.
 
 Each shape is JSON-LD (parses as JSON, expands as RDF) — drop it into any SHACL validator alongside your data, or read it as JSON if that's all you need.
 
