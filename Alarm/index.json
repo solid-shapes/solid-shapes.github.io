@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "sh": "http://www.w3.org/ns/shacl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@id": "https://solid-shapes.github.io/Alarm/index.json#Shape",
+  "@type": "sh:NodeShape",
+  "sh:targetClass": {
+    "@id": "urn:solid:Alarm"
+  },
+  "rdfs:label": "Alarm",
+  "rdfs:comment": "A clock alarm — a recurring wake or reminder trigger at a wall-clock time. In practice a daily-recurring iCalendar Vevent carrying an embedded VALARM. RFC 5545 compatible.",
+  "sh:property": [
+    {
+      "sh:path": {
+        "@id": "urn:solid:summary"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:maxLength": 200,
+      "sh:description": "The alarm's label (e.g. \"Wake up\"). Optional — an alarm needs no name."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:dtstart"
+      },
+      "sh:minCount": 1,
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2})?$",
+      "sh:description": "First occurrence as RFC 5545 floating time — deliberately zoneless (not RFC 3339): the alarm fires at this wall-clock time in whatever timezone the device is in."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:rrule"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:pattern": "^FREQ=",
+      "sh:description": "Recurrence rule (RFC 5545 RECUR). FREQ=DAILY for an everyday alarm; add BYDAY (e.g. FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR) for weekday schedules."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:status"
+      },
+      "sh:datatype": {
+        "@id": "xsd:string"
+      },
+      "sh:in": {
+        "@list": [
+          "CONFIRMED",
+          "CANCELLED"
+        ]
+      },
+      "sh:description": "CONFIRMED = enabled, CANCELLED = disabled. Calendars that hide CANCELLED events render a disabled alarm correctly."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:created"
+      },
+      "sh:datatype": {
+        "@id": "xsd:dateTime"
+      },
+      "sh:description": "When the alarm was created (ISO 8601)."
+    },
+    {
+      "sh:path": {
+        "@id": "urn:solid:valarm"
+      },
+      "sh:nodeKind": {
+        "@id": "sh:BlankNodeOrIRI"
+      },
+      "sh:description": "Embedded iCalendar VALARM — the RFC 5545 alarm subcomponent that marks this event as one that rings."
+    }
+  ],
+  "x-urn-solid": {
+    "term": "urn:solid:Alarm",
+    "termRegistry": "https://urn-solid.com/Alarm/",
+    "schemaSource": "https://solid-schema.github.io/Alarm/index.json",
+    "status": "experimental",
+    "added": "2026-07-21",
+    "derivedFrom": "JSON Schema 2020-12",
+    "notes": []
+  }
+}

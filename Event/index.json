@@ -75,7 +75,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Event",
-    "termRegistry": "https://urn-solid.github.io/Event/",
+    "termRegistry": "https://urn-solid.com/Event/",
     "schemaSource": "https://solid-schema.github.io/Event/index.json",
     "status": "stable",
     "added": "2026-04-19",

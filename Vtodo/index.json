@@ -107,7 +107,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Vtodo",
-    "termRegistry": "https://urn-solid.github.io/Vtodo/",
+    "termRegistry": "https://urn-solid.com/Vtodo/",
     "schemaSource": "https://solid-schema.github.io/Vtodo/index.json",
     "status": "stable",
     "added": "2026-04-19",
