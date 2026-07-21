@@ -68,7 +68,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Bookmark",
-    "termRegistry": "https://urn-solid.github.io/Bookmark/",
+    "termRegistry": "https://urn-solid.com/Bookmark/",
     "schemaSource": "https://solid-schema.github.io/Bookmark/index.json",
     "status": "stable",
     "added": "2026-04-19",

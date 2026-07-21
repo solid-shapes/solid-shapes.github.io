@@ -7,6 +7,14 @@
     "status": "stable",
     "schemaSource": "https://solid-schema.github.io/AddressBook/index.json"
   },
+  "Alarm": {
+    "term": "urn:solid:Alarm",
+    "label": "Alarm",
+    "description": "A clock alarm — a recurring wake or reminder trigger at a wall-clock time. In practice a daily-recurring iCalendar Vevent carrying an embedded VALARM. RFC 5545 compatible.",
+    "shape": "/Alarm/index.json",
+    "status": "experimental",
+    "schemaSource": "https://solid-schema.github.io/Alarm/index.json"
+  },
   "Article": {
     "term": "urn:solid:Article",
     "label": "Article",

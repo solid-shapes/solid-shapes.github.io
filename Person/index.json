@@ -74,7 +74,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Person",
-    "termRegistry": "https://urn-solid.github.io/Person/",
+    "termRegistry": "https://urn-solid.com/Person/",
     "schemaSource": "https://solid-schema.github.io/Person/index.json",
     "status": "stable",
     "added": "2026-04-19",

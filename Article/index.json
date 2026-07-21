@@ -90,7 +90,7 @@
   ],
   "x-urn-solid": {
     "term": "urn:solid:Article",
-    "termRegistry": "https://urn-solid.github.io/Article/",
+    "termRegistry": "https://urn-solid.com/Article/",
     "schemaSource": "https://solid-schema.github.io/Article/index.json",
     "status": "stable",
     "added": "2026-04-19",
